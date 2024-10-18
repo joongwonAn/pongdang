@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/meet.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="root">
+        <header id="header">
+            <div class="header_wrap"><p class="header_title">header</p></div>
+        </header>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--modal 끝-->
+
+
+        <main id="container">
+            <div class="content_wrap">
+                <div class="nav">
+                    <div class="box">
+                        <div class="profile_img_wrap">
+                            <img class="profile_img" src="./img/my_profile.jpg" alt="프로필 사진">
+                        </div>
+
+                        <div class="profile_intro">
+                            <div><span class="bold">닉네임</span> : 머리볶은사자</div>
+                            <div><span class="bold"> 나이</span> : 26</div>
+                            <div><span class="bold">주소 </span>: 서울시 관악구</div>
+                            <div><span class="bold">등급 </span>: 브론즈</div>
+                            <div><span class="bold">성별 </span>: 남</div>
+                        </div>
+
+
+                        <div class="profile_hashtag_wrap">
+                            <p class="profile_hashtag">#축구</p>
+                            <p class="profile_hashtag">#친목도좋아요</p>
+                            <p class="profile_hashtag">#프로틴친목</p>
+                        </div>
+
+                        <div class="profile_introduce">
+                            <p>웹개발자로 일하고 있는 직장인입니다.<br>
+                                주말마다 볼링치고 있습니다.<br>
+                                가벼운 만남, 이성목적 사절입니다!!<br>
+                                여성분 환영입니다~~<br>
+                                관악구 근처에서 치시는분으로 연락주세요!
+
+                            </p>
+                        </div>
+                        <div id="btn">
+                            <button id="btn_test" onclick="button1_click();">대화 신청</button>
+                        </div>
+                    </div>
+                    <!-- 안녕  -->
+                </div>
+
+                <div class="meet_list">
+                    <div class="meet_header">
+                        <div class="meet_header_in">
+                            <p class="bold_font">만남 내역</p>
+                            <span class="meet_total">총 게시글 34개</span>
+                        </div>
+                    </div>
+                    <div class="meet_item">
+                        <div class="meet_content">
+                            <p class="meet_title">월요일에 어린이대공원에서 축구하실 5분 구해요~</p>
+
+                            <div class="meet_detail_box">
+                                <div class="meet_detail">
+                                    <p>날짜 : 4.5(월) 오후 08:00</p>
+                                    <p>장소 : 어린이대공원역</p>
+                                    <p>인원 : 5명</p>
+                                    <p>작성자 : 머리볶은사자</p>
+                                </div>
+                                <button class="meet_btn  btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button">만남 예정</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="meet_item">
+                        <div class="meet_content">
+                            <p class="meet_title">월요일에 어린이대공원에서 축구하실 5분 구해요~</p>
+
+                            <div class="meet_detail_box">
+                                <div class="meet_detail">
+                                    <p>날짜 : 4.5(월) 오후 08:00</p>
+                                    <p>장소 : 어린이대공원역</p>
+                                    <p>인원 : 5명</p>
+                                    <p>작성자 : 머리볶은사자</p>
+                                </div>
+                                <button class="meet_btn  btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button">만남 예정</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="meet_item">
+                        <div class="meet_content">
+                            <p class="meet_title">월요일에 어린이대공원에서 축구하실 5분 구해요~</p>
+
+                            <div class="meet_detail_box">
+                                <div class="meet_detail">
+                                    <p>날짜 : 4.5(월) 오후 08:00</p>
+                                    <p>장소 : 어린이대공원역</p>
+                                    <p>인원 : 5명</p>
+                                    <p>작성자 : 머리볶은사자</p>
+                                </div>
+                                <button class="meet_btn  btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button">만남 예정</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="meet_item">
+                        <div class="meet_content">
+                            <p class="meet_title">월요일에 어린이대공원에서 축구하실 5분 구해요~</p>
+
+                            <div class="meet_detail_box">
+                                <div class="meet_detail">
+                                    <p>날짜 : 4.5(월) 오후 08:00</p>
+                                    <p>장소 : 어린이대공원역</p>
+                                    <p>인원 : 5명</p>
+                                    <p>작성자 : 머리볶은사자</p>
+                                </div>
+                                <button class="meet_btn  btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button">만남 예정</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+            </div>
+        </main>
+
+    </div>
+
+
+</body>
+</html>

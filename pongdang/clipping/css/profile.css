@@ -1,0 +1,374 @@
+#container{
+    width: 100%;
+    height: 100%;
+}
+
+/*운동종류*/
+.container_exercise{
+    width: 1100px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+.exercise_list{
+    position: relative;
+    background-color: rgba(0.5, 0.5, 0.5, 0.1);
+}
+.exercise_title{
+    width: 1000px;
+    margin: 40px 0 20px 0;
+    padding: 20px 0 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.exercise_ul{
+    width: 950px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+}
+.exercise_ul>li{
+    width: 165px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+.exercise_ul>li:nth-child(n+2):hover{
+    color: #ff4871;
+}
+.exercise_ul>li:first-child{
+    color: #ff4871;
+    font-weight: bold;
+    text-align: center;
+    /****************************센터로 할까말까 고민*****************/
+}
+/*하위 운동종류*/
+.sub_exercise_title{
+    width: 1000px;
+    margin: 40px 0 20px 0;
+    padding: 20px 0 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #ff4871;
+}
+.fa-caret-down{color: #444444;}
+.sub_exercise_ul{
+    width: 950px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+}
+.sub_exercise_ul>li{
+    width: 165px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+.sub_exercise_ul>li:nth-child(n+2):hover{
+    color: #ff4871;
+}
+.sub_exercise_ul>li:first-child{
+    color: #ff4871;
+    font-weight: bold;
+    text-align: center;
+    /****************************센터로 할까말까 고민*****************/
+}
+
+/*지역*/
+.container_address{
+    width: 1100px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+.address_list{
+    position: relative;
+    background-color: rgba(0.5, 0.5, 0.5, 0.1);
+}
+.address_title{
+    width: 1000px;
+    margin: 40px 0 20px 0;
+    padding: 20px 0 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+.address_ul{
+    width: 950px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+}
+.address_ul>li{
+    width: 90px;
+    font-size: 14px;
+    text-align: center;
+    padding-bottom: 20px;
+    margin: 0 auto;
+}
+.address_ul>li:nth-child(n+2):hover{
+    color: #ff4871;
+}
+.address_ul>li:first-child{
+    font-weight: bold;
+    text-align: center;
+    /****************************센터로 할까말까 고민*****************/
+}
+/*하위 지역*/
+.sub_address_ul{
+    width: 950px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    /*position: relative;*/
+    /*top: -50px;*/             /*nth-child()로 주기*/
+}
+.sub_address_ul>li{
+    width: 120px;
+    font-size: 14px;
+    padding: 5px;
+    border: 1px solid grey;
+    background-color:  ghostwhite;
+    /*padding-bottom: 20px;*/
+}
+.sub_address_ul>li:hover{
+    color: #ff4871;
+}
+.sub_address_ul>li:first-child{
+    font-weight: bold;
+}
+
+/*검색 태그*/
+.profile_searchTag{
+    width: 1000px;
+    margin: 0 auto;
+}
+.searchTag_title{
+    margin: 40px 0 10px 0;
+}
+.sub_searchTag_title{
+    font-size: 13px;
+    font-weight: bold;
+}
+.searchTag_box{
+    height: 50px;
+    margin: 0 0 5px 0;
+    border: 1px solid #ff4871;
+}
+.sub_searchTag_box{
+    width: 50px;
+    height: 20px;
+    margin: 5px;
+    border-radius: 15px;
+    background-color: grey;
+}
+.searchTag_select{
+    font-size: 12px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-flow: row wrap;
+}
+.selectable{color: grey;margin-left: 10px;}
+.checkbox_box{display: none;}
+.check_label{margin: 0 10px 0 5px;}
+
+/*검색 태그*/
+.profile_searchTag{
+    width: 1100px;
+    margin: 0 auto;
+}
+.searchTag_title{
+    margin: 40px 0 10px 0;
+}
+.sub_searchTag_title{
+    font-size: 13px;
+    font-weight: bold;
+}
+.searchTag_box{
+    height: 50px;
+    margin: 0 0 5px 0;
+    border: 1px solid #ff4871;
+}
+/*.sub_searchTag_box{*/
+/*    width: 50px;*/
+/*    height: 20px;*/
+/*    margin: 5px;*/
+/*    border-radius: 15px;*/
+/*    background-color: grey;*/
+/*}*/
+.searchTag_select{
+    font-size: 12px;
+    display: flex;
+    flex-flow: row wrap;
+}
+.selectable{color: grey;margin-left: 10px;}
+.checkbox_box{display: none;}
+.check_label{margin: 0 10px 0 5px;}
+
+/*나이 검색*/
+.container_filter{
+    width: 1100px;
+    display: flex;
+}
+.age_filter{
+    display: flex;
+    justify-content: flex-end;
+}
+/*.age{*/
+/*    display: flex;*/
+/*    justify-content: flex-end;*/
+/*}*/
+/*.age_filter{*/
+/*    font-size: 10px;*/
+/*    padding: 10px;*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*}*/
+/*.age input{*/
+/*    width: 30px;*/
+/*    height: 10px;*/
+/*}*/
+/*.age input>div{*/
+/*    left: -10px;*/
+/*}*/
+/*.fa-search{*/
+/*    padding: 5px;*/
+/*    background-color: rgba(0.5, 0.5, 0.5, 0.1);*/
+/*    border-radius: 5px;*/
+/*}*/
+/*.container_filter select{*/
+/*    font-size: 10px;*/
+/*    height: 20px;*/
+/*    margin-top: 12px;*/
+/*}*/
+/*.scrap{*/
+/*    display: flex;*/
+/*    justify-content: flex-start;*/
+/*    width: 100px;*/
+/*}*/
+/*파트너*/
+.container_partner{
+    width: 1100px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+/*파트너 리스트*/
+.partner_list{
+    width: 840px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+}
+.partner_box{
+    width: 253px;
+    height: 350px;
+    margin-top: 20px;
+}
+.partner_default:hover{  /*파트너 hover시 자기소개 나오게하기*/
+    opacity: 0;
+}
+.partner_default{
+    position: relative;
+    z-index: 2;
+    width: 253px;
+    height: 348px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: .2s .2s;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    background-color: white;
+}
+.partner_default img{
+    display: block;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin: 20px auto 0 auto;
+}
+.partner_basic_info{ /*랭크-닉네임-나이-성별 공간*/
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lv1{color:gold}
+.lv2{color:orange}
+.lv3{color:yellowgreen}
+.lv4{color:forestgreen}
+.lv5{color:dodgerblue}
+.lvAdmin{color: #444444}
+.partner_name{/*닉네임*/
+    margin-left: 6px;
+}
+.partner_age_gender{/*나이 성별*/
+    font-size: 12px;
+}
+.partner_address{/*주소*/
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+}
+.partner_hashtag{/*태그*/
+    width: 200px;
+    height: 53px;
+    margin: 10px auto 0 auto;
+    text-align: center;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgb(94,94,94);
+}
+.partner_application, .partner_application2 {/*1:1 대화 신청하기*/
+    position: absolute;
+    width: 210px;
+    height: 40px;
+    border: 1px solid rgb(255, 71, 129);
+    color: rgb(255, 71, 129);
+    border-radius: 7px;
+    text-align: center;
+    line-height: 40px;
+    font-weight: 600;
+    left: 50%;
+    margin-top: 10px;
+    margin-left: -105px;
+}
+.partner_hover{ /*자기소개 공간*/
+    position: relative;
+    z-index: 1;
+    top: -350px;
+    width: 253px;
+    height: 348px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: .3s .3s;
+    border: 1px solid #5a5a5a;
+    background-color: #5a5a5a;
+    color: white;
+}
+.partner_introduce{
+    width: 210px;
+    height: 270px;
+    margin: 20px auto 0 auto;
+    line-height: 22px;
+}
+.partner_application2{/*자기소개 공간 1:1대화신청하기*/
+    position: static;
+    margin: 10px auto 0 auto;
+    color: #424242;
+    border: none;
+    background-color: white;
+}
+.bookmark_icon{ /*사진 안 밀리는법은?*/
+    z-index: 3;
+    float: right;
+    cursor: pointer;
+    margin: 15px;
+    position: relative;
+    color: #ff4871;
+}
+.fullBookmark{
+    color: rgb(255, 71, 129);
+}
+.fa-bookmark:hover{
+    color: #ff4871; /*왜 hover프로필에 hover하면 색 안빠뀜?*/
+}

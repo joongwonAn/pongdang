@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="post.css">
+    <link rel="stylesheet" href="feed.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <div id="root">
+        <header id="header">
+            <div class="header_wrap"><p class="header_title">header</p></div>
+        </header>
+        <main id="container">
+            <div class="content_wrap">
+                <div class="nav">
+                    <ul class="nav_list">
+                        <li><a href="../collection/index.html">모아보기</a></li>
+                        <li><a href="../myPost/index.html">내가 쓴 글</a></li>
+                        <li><a href="../proposePost/index.html">내가 신청한 게시글</a></li>
+                        <li><a href="#">만남 내역</a></li>
+                        <li><a href="../clipping/index.html">스크랩</a></li>
+                        <li><a href="../introduce/index.html">내 정보</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="content">
+                        <form action="">
+                            <div class="content_header">
+                                <div class="tap_wrap">
+                                    <div class="post_tap">내가 쓴 글</div>
+                                </div>
+                                <div class="count_wrap">
+                                    <div class="total_count"></div>
+                                </div>
+                            </div>
+                            <div class="post_wrap">
+                                <section>
+                                    <!--게시글 시작-->
+                                    <div class="inner">
+                                        <div class="find_a_list">
+
+                                            <!--게시글 리스트-->
+                                            <div class="post_list">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="write_btn_wrap">
+                        <a href="post_write"><button type="button" class="write_btn">글쓰기</button></a>
+                    </div>
+                    <div class="paging_btn_wrap">
+                        <div class="post_paging_btn_wrap"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer id="footer">
+            <div class="footer_wrap"></div>
+        </footer>
+    </div>
+    <script src="index.js"></script>
+    <script src="feed.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <script>
+
+
+        const $postPagingBtnWrap = $(".post_paging_btn_wrap");
+        const $totalCount = $(".total_count");
+        const $postList = $(".post_list");
+        const $content = $(".content");
+
+        const POST_PAGING_COUNT = 10; //page 에 보이는 게시글 수
+        const POST_PAGING_NUM = 4; //page 에 보이는 버튼 수
+        let postPagingStartNum = 0;
+        let postPageCount;
+        let postCount;
+        let postPageNum = 0;
+
+        function AjaxPost(){
+            $.ajax({
+                url: "post.json",
+                error:function(){
+                    alert("서버 점검 중");
+                }, success:function (json){
+                    $postList.html('');
+                    const createHead = $("<div class=\"post_box_top\">\n" +
+                        "<p class=\"post_A_top\">말머리</p>\n" +
+                        "<div class=\"post_title_box\">\n" +
+                        "<p class=\"post_title_top\">제목</p>\n" +
+                        "<p class=\"post_title_under_top\">지역/날짜/시간</p>\n" +
+                        "</div>\n" +
+                        "<p class=\"post_name_top\">작성자</p>\n" +
+                        "<p class=\"post_date_top\">등록일</p>\n" +
+                        "<p class=\"post_views_top\">조회수</p>\n" +
+                        "</div>");
+                    $postList.append(createHead);
+                    for(let i = postPagingStartNum; i < postPagingStartNum
+                    + POST_PAGING_COUNT; i++){
+                        const createBox = $("<div class='post_box'></div>");
+                        const createABox = $('<div class="post_A_box"></div>')
+                        const createImg=$("<i class='far fa-bookmark fa-lg defaultBookmark'</i>")
+                        const createA=$("<p class='post_A'></p>").text(json[i].A);
+                        const createTitleBox=$('<div class="post_title_box"></div>')
+                        const createTitle=$("<p class='post_title'></p>").text(json[i].title);
+                        const createTitleSub=$("<p class='post_title_under'></p>").text(json[i].address + " / " + json[i].day + " / " +json[i].time);
+                        const createInfo=$('<div class="post_info"></div>');
+                        const createName=$("<p class='post_name'></p>").text(json[i].name);
+                        const createAG=$("<p class='post_ag'></p>").text(json[i].age + " " + json[i].gender);
+                        const createDate=$("<p class='post_date'></p>").text(json[i].date);
+                        const createViews=$("<p class='post_views'></p>").text(i + 1);
+
+                        createABox.append(createImg, createA);
+                        createInfo.append(createName, createAG);
+                        createTitleBox.append(createTitle, createTitleSub);
+                        createBox.append(createABox, createTitleBox, createInfo, createDate, createViews);
+                        $postList.append(createBox);
+                    }
+                }
+            })
+        }
+
+        function AjaxPostBtn(){
+            $.ajax({
+                url: "post.json",
+                error:function(){
+                    alert("서버 점검 중");
+                }, success:function (json){
+                    postCount = json.length;
+                    postPageCount = Math.ceil(postCount / POST_PAGING_COUNT);
+                    const $createLeftBtn = $("<button type='button' class='paging_btn post_paging_left_btn'><</button>");
+                    const $createRightBtn = $("<button type='button' class='paging_btn post_paging_right_btn'>></button>");
+                    $postPagingBtnWrap.append($createLeftBtn);
+                    for(let i = 1; i <= postPageCount; i++){
+                        const createBtn = $("<button type='button' class='paging_btn post_paging_btn'></button>");
+                        createBtn.text(i);
+                        if(i == 1) createBtn.css({"background-color":"#FF4871", "color":"white"});
+                        createBtn.on('click', function (){
+                            postPagingStartNum = (i - 1) * POST_PAGING_COUNT;
+                            $(".post_paging_btn").css({"background-color":"#EEEEEE", "color":"black"});
+                            createBtn.css({"background-color":"#FF4871", "color":"white"});
+                            AjaxPost();
+                            if(i == postPageCount){
+                                $content.css("height", "625px");
+                            } else {
+                                $content.css("height", "");
+                            }
+                        })
+                        if(i > POST_PAGING_NUM) createBtn.css("display", "none");
+                        $postPagingBtnWrap.append(createBtn);
+                    }
+                    $createRightBtn.on('click', function (){
+                        if((postPageNum + 2) * POST_PAGING_NUM >= postPageCount) $createRightBtn.css("display", "none");
+                        postPageNum++;
+                        $createLeftBtn.css("display", "block");
+                        $(".post_paging_btn").css("display", "none");
+                        const childrens = $postPagingBtnWrap.children();
+                        $.each(childrens, function (index, item){
+                            if(item.innerText > postPageNum * POST_PAGING_NUM &&
+                                item.innerText <= (postPageNum + 1) * POST_PAGING_NUM )
+                                $(item).css("display", "block");
+                        });
+                    })
+                    $createLeftBtn.on('click', function (){
+                        if((postPageNum - 1) * POST_PAGING_NUM < POST_PAGING_NUM) $createLeftBtn.css("display", "none");
+                        postPageNum--;
+                        $createRightBtn.css("display", "block");
+                        $(".post_paging_btn").css("display", "none");
+                        const childrens = $postPagingBtnWrap.children();
+                        $.each(childrens, function (index, item){
+                            if(item.innerText > postPageNum * POST_PAGING_NUM &&
+                                item.innerText <= (postPageNum + 1) * POST_PAGING_NUM )
+                                $(item).css("display", "block");
+                        });
+                    })
+                    $postPagingBtnWrap.append($createRightBtn);
+                    $createLeftBtn.css("display", "none");
+                    if((postPageNum + 1) * POST_PAGING_NUM >= postPageCount) $createRightBtn.css("display", "none");
+                }
+            })
+        }
+
+        function AjaxPostCount(){
+            $.ajax({
+                url: "post.json",
+                error:function(){
+                    alert("서버 점검 중");
+                }, success:function (json){
+                    postCount = json.length;
+                    $totalCount.text(`총 게시글 ${postCount}개`);
+                }
+            })
+        }
+
+        init();
+        function init(){
+            AjaxPost();
+            AjaxPostBtn();
+            AjaxPostCount();
+        }
+
+        $(document).on("click",'.defaultBookmark',function () {
+            $(this).replaceWith('<i class="fas fa-bookmark fa-lg fullBookmark"></i>');
+        })
+        $(document).on("click",'.fullBookmark',function () {
+            $(this).replaceWith('<i class="far fa-bookmark fa-lg defaultBookmark"></i>');
+        })
+
+    </script>
+</body>
+</html>

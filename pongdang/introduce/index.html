@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="root">
+        <header id="header">
+            <div class="header_wrap"><div class="header_title">header</div></div>
+        </header>
+        <main id="container">
+            <div class="content_wrap">
+                <div class="nav">
+                    <ul class="nav_list">
+                        <li><a href="../collection/index.html">모아보기</a></li>
+                        <li><a href="../myPost/index.html">내가 쓴 글</a></li>
+                        <li><a href="../proposePost/index.html">내가 신청한 게시글</a></li>
+                        <li><a href="#">만남 내역</a></li>
+                        <li><a href="../clipping/index.html">스크랩</a></li>
+                        <li><a href="../introduce/index.html">내 정보</a></li>
+                    </ul>
+                </div>
+                <div class="content">
+                    <form>
+                        <div class="tap_wrap">
+                            <div class="intro_tap">내 정보</div>
+                            <div class="profile_tap">프로필</div>
+                        </div>
+                        <div class="intro_wrap">
+                            <ul class="intro_list">
+                                <li class="intro_item">
+                                    <div>아이디</div>
+                                    <div>tprud248@naver.com</div>
+                                </li>
+                                <li class="intro_item password_item">
+                                    <div>비밀번호</div>
+                                    <div>
+                                        <input id="passwordInput" type="text" placeholder="내용을 입력해주세요">
+                                        <div class="validation password_validation">8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.</div>
+                                    </div>
+                                </li>
+                                <li class="intro_item password_check_item">
+                                    <div>비밀번호 확인</div>
+                                    <div class="password_update_wrap">
+                                        <div>
+                                            <input id="passwordCheckInput" type="text" placeholder="내용을 입력해주세요">
+                                            <div class="validation password_check_validation">비밀번호가 일치하지 않습니다.</div>
+                                        </div>
+                                        <button type="button" class="btn passwordUpdateBtn">변경</button>
+                                    </div>
+                                </li>
+                                <li class="intro_item">
+                                    <div>이름</div>
+                                    <div>정수빈</div>
+                                </li>
+                                <li class="intro_item">
+                                    <div>성별</div>
+                                    <div>여성</div>
+                                </li>
+                                <li class="intro_item">
+                                    <div>생년월일</div>
+                                    <div>1995년 5월 5일</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="profile_wrap">
+                            <ul class="profile_list">
+                                <li class="profile_item">
+                                    <div>닉네임</div>
+                                    <div class="profile_item_status">일곱글자할수있</div>
+                                </li>
+                                <li class="profile_item area_item">
+                                    <div>거주지</div>
+                                    <div class="area_wrap">
+                                        <div class="area">부산광역시 강서구 녹산산단382로14번가길 10~29번지(송정동)</div>
+                                        <div class="area_input_wrap">
+                                            <div class="postcode_wrap">
+                                                <input type="text" id="postcodeInput" placeholder="우편번호" readonly>
+                                                <button type="button" class="area_btn" onclick="sample6_execDaumPostcode()">우편번호 찾기</button>
+                                            </div>
+                                            <input type="text" id="areaInput" placeholder="주소" readonly>
+                                            <div class="area_validation">주소를 입력해주세요.</div>
+                                        </div>
+                                        <div class="area_btn_wrap">
+                                            <button type="button" class="btn area_cancel_btn">취소</button>
+                                            <button type="button" class="btn area_modify_btn">수정</button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="profile_item">
+                                    <div>등급</div>
+                                    <div class="profile_item_status">Lv.1</div>
+                                </li>
+                                <li class="profile_item introduce_item">
+                                    <div>자기소개</div>
+                                    <div class="introduce_wrap">
+                                        <div class="introduce_inner">
+                                            <div class="introduce">안녕하세요<br>건강을 위해 운동합니다.<br>제 해시태그에 써 있는 운동 다 좋아합니다.<br>같이 즐겁게 운동할 수 있으면 좋겠습니다.</div>
+                                            <textarea id="introduceInput" placeholder="내용을 입력해주세요" name="content" rows="5" cols="30" spellcheck="false">안녕하세요&#10;건강을 위해 운동합니다.&#10;제 해시태그에 써 있는 운동 다 좋아합니다.&#10;같이 즐겁게 운동할 수 있으면 좋겠습니다.</textarea>
+                                        </div>
+                                        <div class="introduce_btn_wrap">
+                                            <button type="button" class="btn introduce_cancel_btn">취소</button>
+                                            <button type="button" class="btn introduce_modify_btn">수정</button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="profile_item picture_item">
+                                    <div>사진</div>
+                                    <div class="password_update_wrap">
+                                        <div>
+                                            <label class="picture" for="pictureInput">사진을 넣어주세요.</label>
+                                            <input type="file" id="pictureInput" class="picture_input" accept="image/jpg, image/jpeg, image/png" multiple="" style="display:none" onchange="setThumbnail(event);">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="profile_item hashtag_item">
+                                    <div>해시태그</div>
+                                    <div class="hashtag_wrap">
+                                        <div>
+                                            <ul class="hashtag_list">
+<!--                                                    ajax로 대체-->
+<!--                                                <li class="inner_hashtag_item">#태권도/유도</li>-->
+<!--                                                <li class="inner_hashtag_item">#검도</li>-->
+<!--                                                <li class="inner_hashtag_item">#펜싱</li>-->
+<!--                                                <li class="inner_hashtag_item">#승마</li>-->
+<!--                                                <li class="inner_hashtag_item">#양궁</li>-->
+<!--                                                <li class="inner_hashtag_item">#운동만할래요</li>-->
+<!--                                                <li class="inner_hashtag_item">#동기부여</li>-->
+<!--                                                <li class="inner_hashtag_item">#건강이최고</li>-->
+<!--                                                <li class="inner_hashtag_item">#재능기부</li>-->
+<!--                                                <li class="inner_hashtag_item">#모두</li>-->
+                                            </ul>
+                                        </div>
+                                        <a href="#"><button type="button" class="btn hashtag_modify_btn">수정</button></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer id="footer">
+            <div class="footer_wrap"></div>
+        </footer>
+    </div>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

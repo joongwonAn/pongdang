@@ -1,0 +1,150 @@
+a, a:hover, a:active {
+    text-decoration: none;
+    color: black;
+    outline: none;
+}
+#header{
+    width: 100vw;
+    height: 160px;
+    /*background-color: #b8b8b8;*/
+}
+.header_wrap{
+    width: 1100px;
+    height: 100%;
+    margin: auto;
+    /*background-color: white;*/
+}
+.header_title{
+    font-size: 50px;
+    line-height: 160px;
+    text-align: center;
+}
+/*/////////////////////content/////////////////////*/
+#container{
+    width: 100vw;
+    /*background-color: #72747f;*/
+}
+.content_wrap{
+    width: 1100px;
+    height: 100%;
+    margin: auto;
+    padding-top: 10px;
+    /*background-color: antiquewhite;*/
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav {
+
+}
+
+.nav_list a {
+    display: block;
+    width: 180px;
+    height: 40px;
+    margin-bottom: 4px;
+    padding-left: 6px;
+    border: solid 1px #999999;
+    border-radius: 2px;
+    line-height: 40px;
+    color: #222222;
+}
+
+.nav_list li:nth-child(2) a {
+    border: solid 1px #FF4781;
+    color: #FF4781;
+}
+
+/*.nav_list li:nth-child(1) a {*/
+/*    background-color: #FF4781;*/
+/*    border: 0;*/
+/*    color: white;*/
+/*}*/
+
+.nav_list a:hover {
+    border: solid 1px #FF4781;
+}
+
+.content {
+    width: 840px;
+    border: solid 1px #999999;
+    margin-bottom: 12px;
+}
+
+.content_header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px #999999;
+}
+
+.tap_wrap {
+    height: 46px;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+}
+
+.post_tap {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.total_count {
+    transform: translate(-12px, 26px);
+}
+
+.write_btn_wrap {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.write_btn {
+    width: 70px;
+    height: 32px;
+    font-size: 16px;
+    background-color: #ff4871;
+    border-radius: 2px;
+    border: 0;
+    margin-right: 12px;
+    color: white;
+    right: 0;
+    cursor: pointer;
+}
+
+.write_btn:hover {
+    background-color: #ff2851;
+}
+
+.post_wrap {
+}
+
+.post_paging_btn_wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.paging_btn {
+    width: 24px;
+    height: 24px;
+    margin: 0 4px;
+    outline: 0;
+    border: 0;
+    border-radius: 2px;
+    background-color: #EEEEEE;
+    cursor: pointer;
+}
+
+/*////////////////////footer/////////////////////*/
+#footer{
+    width: 100vw;
+    height: 400px;
+    /*background-color: #444444;*/
+}
+
+.footer_wrap{
+    width: 1100px;
+    height: 100%;
+    margin: auto;
+    /*background-color: floralwhite;*/
+}

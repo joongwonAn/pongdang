@@ -1,0 +1,60 @@
+
+
+.meet_list{
+    border: 1px solid rgba(0,0,0,.4);
+    width:840px;
+    height:fit-content;
+    align-self:start;
+}
+
+.meet_header{
+    border-bottom:2px solid rgba(0,0,0,.4);
+
+    margin-top:15px;
+    margin-bottom:30px;
+}
+.meet_header_in{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom:5px;
+}
+.meet_header p{
+    margin:0!important;
+}
+.meet_list .bold_font{
+    font-weight:600;
+    font-size:24px;
+    margin-left:15px!important;
+}
+.meet_list .meet_total{
+    margin-top:12px;
+    font-size:15px;
+    margin-right:15px;
+}
+.meet_item{
+    width: 790px;
+    margin: 20px 25px;
+    border: 1px solid rgba(0,0,0,.4);
+    border-radius:4px;
+}
+.meet_item .meet_content{
+    margin: 15px 30px;
+}
+.meet_item .meet_title{
+    font-size:25px;
+    font-weight:600;
+}
+.meet_item .meet_detail_box{
+    display: flex;
+    justify-content: space-between;
+}
+.meet_item .meet_detail{
+    line-height:10px;
+}
+.meet_item .meet_btn{
+    margin-top:50px;
+    width:120px;
+    height:50px;
+
+}
+

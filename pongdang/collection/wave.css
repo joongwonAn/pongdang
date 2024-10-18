@@ -1,0 +1,6 @@
+canvas {
+    width: 840px;
+    height: 250px;
+    margin-top: -250px;
+    transform: translateY(-14px);
+}

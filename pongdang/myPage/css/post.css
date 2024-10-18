@@ -1,0 +1,79 @@
+/* COMMON */
+@media screen and (max-width:1200px){ /*1150px이하일때는
+    의 너비를 1150*/
+    .btn_inner{width:1200px;} /*1150px이하일때는 inner의 너비를 1150*/
+    .inner{width:1100px;}
+}
+
+.inner{
+    max-width:1100px;
+    margin: 0 auto;
+    box-sizing:border-box;
+}
+body{
+    font-family: 'SF Pro Display','AppleSDGothicNeo','Malgun Gothic','\B9D1\C740 \ACE0\B515','\B3CB\C6C0',dotum,sans-serif;
+}
+
+
+.find_a_list{
+    width: 1100px;
+}
+.post_list{
+    width: 1100px;
+}
+.post_box, .post_box_top{
+    width: 830px;
+    padding: 5px;
+    border-bottom: 1px solid grey;
+    display: flex;
+    font-size: 13px;
+}
+.post_box_top{
+    text-align: center;
+    border-top: 1px solid grey;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #ff4871;
+    color: white;
+}
+.post_A_top, .post_A_box{
+    width: 160px;
+    margin: 5px;
+    padding-top: 7px;
+}
+.post_A_box{display: flex;}
+.post_A{
+    width: 100px;
+    margin: 0 auto;
+    flex-direction: row;
+}
+.post_title_box{margin: 5px;}
+.post_title_top{width: 320px;}
+.post_title{width: 350px;}
+.post_title_under, .post_title_under_top{
+    width: 320px;
+    padding-top: 5px;
+    color: #ff4871;
+}
+.post_title_under_top{
+    font-weight: normal;
+    font-size: 13px;
+    color: white;
+}
+.post_info{margin: 5px;}
+.post_name_top{
+    width: 130px;
+    margin: 5px;padding-top: 7px;
+}
+.post_name{margin: 0;width: 100px;}
+.post_ag{margin: 0;padding-top: 7px;width: 100px;}
+.post_date, .post_views, .post_date_top, .post_views_top{
+    text-align: center;
+    margin: 5px;
+    padding-top: 7px;
+    width: 80px;
+}
+
+.fa-bookmark{ /*사진 안 밀리는법은?*/
+    color: #ff4871;
+}
